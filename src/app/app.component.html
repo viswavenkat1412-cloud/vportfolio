@@ -1,0 +1,139 @@
+<nav class="nav" [class.nav--solid]="scrolled()">
+  <a class="nav__mark" href="#top">VV</a>
+  <div class="nav__links">
+    <a *ngFor="let item of nav" [href]="'#' + item.toLowerCase()">{{ item }}</a>
+  </div>
+  <a class="nav__cta" href="/assets/viswanath-resume.pdf" download="Viswanath-V-Resume.pdf">
+    Resume
+  </a>
+</nav>
+
+<header id="top" class="hero">
+  <p class="hero__eyebrow">
+    Mechanical Engineering · Digital Manufacturing
+  </p>
+
+  <h1 class="hero__name">Viswanath&nbsp;V.</h1>
+
+  <p class="hero__role">
+    Building at the intersection of <em>mechanical design</em> and
+    <em>software</em> — CAD, automation, and Python-driven product work.
+  </p>
+
+  <!-- 3D Parallax Photo -->
+  <div class="hero__photo">
+  </div>
+  
+  <div class="hero__actions">
+    <a
+      class="btn btn--primary"
+      href="/assets/viswanath-resume.pdf"
+      download="Viswanath-V-Resume.pdf"
+    >
+      Download resume
+    </a>
+
+    <a class="btn btn--ghost" href="#work">
+      See the work ↓
+    </a>
+  </div>
+
+  <div class="hero__meta">
+    <span>Thanjavur, Tamil Nadu</span>
+    <span>·</span>
+
+    <a href="mailto:viswavenkat1412@email.com">
+      viswavenkat1412&#64;email.com
+    </a>
+
+    <span>·</span>
+
+    <a
+      href="https://linkedin.com/in/viswa"
+      target="_blank"
+      rel="noopener"
+    >
+      LinkedIn
+    </a>
+
+    <span>·</span>
+
+    <a
+      href="https://viswanathv.github.io"
+      target="_blank"
+      rel="noopener"
+    >
+      GitHub
+    </a>
+  </div>
+</header>
+
+
+<section class="about">
+  <p>
+    Final-year Mechanical Engineering (Digital Manufacturing) student at
+    SASTRA University, working across both the mechanical and software
+    domains — with a growing pull toward product design and engineering
+    applications. CGPA 6.12, Class of 2027.
+  </p>
+</section>
+
+<section id="work" class="work">
+  <h2 class="section__title"><span class="section__num">01</span> Selected work</h2>
+  <div class="work__grid">
+    <article class="card" *ngFor="let p of projects">
+      <p class="card__tag">{{ p.tag }}</p>
+      <h3 class="card__title">{{ p.name }}</h3>
+      <ul class="card__points">
+        <li *ngFor="let point of p.points">{{ point }}</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="skills" class="skills">
+  <h2 class="section__title"><span class="section__num">02</span> Skills</h2>
+  <div class="skills__grid">
+    <div class="skill-group" *ngFor="let g of skills">
+      <h4>{{ g.label }}</h4>
+      <div class="skill-group__chips">
+        <span *ngFor="let item of g.items">{{ item }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="experience">
+  <h2 class="section__title"><span class="section__num">03</span> Experience &amp; training</h2>
+  <div class="timeline">
+    <div class="timeline__item" *ngFor="let e of experience">
+      <div class="timeline__head">
+        <h3>{{ e.role }}</h3>
+        <span class="timeline__meta">{{ e.org }} — {{ e.type }}</span>
+      </div>
+      <ul>
+        <li *ngFor="let point of e.points">{{ point }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="certs">
+    <h4>Certifications</h4>
+    <ul>
+      <li *ngFor="let c of certifications">{{ c }}</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section__title"><span class="section__num">04</span> Get in touch</h2>
+  <p class="contact__lead">Open to internships and roles in product design, automation, and Python development.</p>
+  <div class="contact__actions">
+    <a class="btn btn--primary" href="mailto:viswavenkat1412@email.com">Email me</a>
+    <a class="btn btn--ghost" href="/assets/viswanath-resume.pdf" download="Viswanath-V-Resume.pdf">Download resume</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>&copy; {{ currentYear }} Viswanath V.</span>
+</footer>
